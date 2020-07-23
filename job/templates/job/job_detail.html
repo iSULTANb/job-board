@@ -7,3 +7,6 @@
 <p>salary:  {{job.salary}} k</p>
 <p>experience:  {{job.experience}} Years</p>
 <p>category:  {{job.category}}</p>
+{% csrf_token %}
+<form method="POST" action="/">{% csrf_token %} </form>
+<button type="submit"></button>

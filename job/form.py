@@ -1,5 +1,14 @@
+from django import forms
+from .models import ApplyJob , Job
 
-from . models import *
+class ApplyForm(forms.ModelForm):
+    class Meta():
+        model = ApplyJob
+        fields = ['name','email','website','apply_file','comment']
 
-class JobForm(forms.Form):
-    class Meta(Job):
+
+class AddJob(forms.ModelForm):
+    class Meta():
+        model = Job
+        fields = '__all__'
+        exclude = ('slug','owner')
